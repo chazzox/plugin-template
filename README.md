@@ -2,10 +2,10 @@
 
 ## About
 
--   Plugin template for better discord. SASS and JSX support out the box
--   Typescript support son™
+-   Plugin template for better discord. SASS and TSX support out the box
 -   Uses [rollupjs](https://rollupjs.org/guide/en/) for built in tsx, sass and minifying support
 -   Rollup builds the plugin to both your local [betterdiscord](https://betterdiscord.app) path and then plugin folder in the local repo, whenever your file changes
+-   Support for any npm module using react through [@rollup/plugin-alias](https://www.npmjs.com/package/@rollup/plugin-alias)
 
 ## Getting started
 
