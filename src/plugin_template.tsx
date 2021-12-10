@@ -15,8 +15,8 @@ function ComponentExample() {
 	return (
 		<div id="counterContainer">
 			<h1>{counter}</h1>
-			<button onClick={() => setCounter((prev) => ++prev)}>Increase</button>
-			<button onClick={() => setCounter((prev) => --prev)}>Decrease</button>
+			<button className="counterButtons" onClick={() => setCounter((prev) => ++prev)}>Increase</button>
+			<button className="counterButtons" onClick={() => setCounter((prev) => --prev)}>Decrease</button>
 		</div>
 	);
 }
