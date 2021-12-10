@@ -1,8 +1,13 @@
 import { defineConfig } from 'rollup';
-import { babel } from '@rollup/plugin-babel';
-import { terser } from 'rollup-plugin-terser';
+
+import alias from '@rollup/plugin-alias';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import typescript from '@rollup/plugin-typescript';
+
 import styles from 'rollup-plugin-styles';
+import { terser } from 'rollup-plugin-terser';
+
 import { name } from './package.json';
 import os from 'os';
 import path from 'path';
@@ -32,7 +37,7 @@ const meta = `
 `;
 
 export default defineConfig({
-	input: `src/${name}.jsx`,
+	input: `src/${name}.tsx`,
 	output: [
 		{
 			file: `plugin/${name}.plugin.js`,
@@ -46,7 +51,15 @@ export default defineConfig({
 		}
 	],
 	plugins: [
+		// fixing any node_module react import
+		alias({
+			entries: [{ find: 'react', replacement: path.resolve(path.resolve(__dirname), 'src/react.ts') }]
+		}),
+
+		// resolve imports
 		nodeResolve(),
+		commonjs(),
+
 		// .scss files to inline BdApi string
 		styles({
 			minimize: true,
@@ -58,10 +71,10 @@ export default defineConfig({
 				}
 			]
 		}),
+
 		// jsx transformer
-		babel({
-			presets: ['@babel/preset-react']
-		}),
+		typescript(),
+
 		// minifier
 		terser({
 			module: true,

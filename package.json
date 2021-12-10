@@ -3,6 +3,7 @@
 	"version": "1.0.0",
 	"description": "Plugin template for better discord",
 	"scripts": {
+		"start": "rollup --config -w",
 		"build": "rollup --config",
 		"watch": "rollup --config -w",
 		"format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\""
@@ -13,17 +14,18 @@
 	},
 	"homepage": "https://github.com/chazzox/plugin-template#readme",
 	"devDependencies": {
-		"@babel/cli": "^7.15.7",
-		"@babel/core": "^7.15.8",
-		"@babel/preset-react": "^7.14.5",
+		"@rollup/plugin-alias": "^3.1.8",
 		"@rollup/plugin-babel": "^5.3.0",
+		"@rollup/plugin-commonjs": "^21.0.1",
 		"@rollup/plugin-node-resolve": "^13.0.6",
+		"@rollup/plugin-typescript": "^8.3.0",
 		"@types/bandagedbd__bdapi": "^0.3.2",
 		"prettier": "^2.4.1",
 		"rollup": "^2.58.0",
 		"rollup-plugin-styles": "^3.14.1",
 		"rollup-plugin-terser": "^7.0.2",
 		"sass": "^1.43.2",
-		"terser": "^5.9.0"
+		"terser": "^5.9.0",
+		"typescript": "^4.5.3"
 	}
 }

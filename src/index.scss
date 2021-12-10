@@ -1,4 +1,18 @@
 #counterContainer {
 	color: white;
 	text-align: center;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	align-items: center;
+}
+button {
+	display: block;
+	width: fit-content;
+	padding: 8px;
+	border-radius: 8px;
+	background-color: var(--brand-experiment);
+	color: white;
+	font-size: 12pt;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
