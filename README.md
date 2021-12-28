@@ -1,4 +1,4 @@
-# plugin-template
+# Better discord plugin template
 
 ## About
 
